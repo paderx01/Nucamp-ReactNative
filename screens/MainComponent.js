@@ -20,7 +20,7 @@ import { fetchPartners } from "../features/partners/partnersSlice";
 import { fetchCampsites } from "../features/campsites/campsitesSlice";
 import { fetchPromotions } from "../features/promotions/promotionsSlice";
 import { fetchComments } from "../features/comments/commentsSlice";
-import FavoriteScreen from "./FavoritesScreen";
+import FavoritesScreen from "./FavoritesScreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -120,7 +120,7 @@ const ReservationNavigator = () => {
   );
 };
 
-const FavoriteNavigator = () => {
+const FavoritesNavigator = () => {
   const Stack = createStackNavigator();
   return (
     <Stack.Navigator screenOptions={screenOptions}>
@@ -257,7 +257,6 @@ const Main = () => {
             ),
           }}
         />
-
         <Drawer.Screen
           name="Favorites"
           component={FavoritesNavigator}
@@ -274,7 +273,6 @@ const Main = () => {
             ),
           }}
         />
-
         <Drawer.Screen
           name="About"
           component={AboutNavigator}
