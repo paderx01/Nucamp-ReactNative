@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Button, FlatList, Modal, StyleSheet, Text, View } from "react-native";
 import { Input, Rating } from "react-native-elements";
 import { useSelector, useDispatch } from "react-redux";
-import RenderCampsite from "../features/campsites/RenderCampsite";
 import { toggleFavorite } from "../features/favorites/favoritesSlice";
 import { postComment } from "../features/comments/commentsSlice";
 import * as Animatable from "react-native-animatable";
+import RenderCampsite from "../features/campsites/RenderCampsite";
 
 const CampsiteInfoScreen = ({ route }) => {
   const { campsite } = route.params;

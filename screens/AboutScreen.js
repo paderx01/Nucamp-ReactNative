@@ -29,12 +29,14 @@ const AboutScreen = () => {
   if (partners.isLoading) {
     return (
       <ScrollView>
-        <Mission />
-        <Card>
-          <Card.Title>Community Partners</Card.Title>
-          <Card.Divider />
-          <Loading />
-        </Card>
+        <Animatable.View animation="fadeInDown" duration={2000} delay={1000}>
+          <Mission />
+          <Card>
+            <Card.Title>Community Partners</Card.Title>
+            <Card.Divider />
+            <Loading />
+          </Card>
+        </Animatable.View>
       </ScrollView>
     );
   }
