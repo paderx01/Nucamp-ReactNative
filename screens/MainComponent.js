@@ -237,7 +237,7 @@ const Main = () => {
 
   useEffect(() => {
     NetInfo.fetch().then((connectionInfo) => {
-      Platform.os === "ios"
+      Platform.OS === "ios"
         ? Alert.alert("Initial Network Connectivity Type:", connectionInfo.type)
         : ToastAndroid.show(
             "Initial Network Connectivity Type: " + connectionInfo.type,
@@ -253,23 +253,23 @@ const Main = () => {
   }, []);
 
   const handleConnectivityChange = (connectionInfo) => {
-    let connectionMsg = "You are now connected to an active network";
+    let connectionMsg = "You are now connected to an active network.";
     switch (connectionInfo.type) {
       case "none":
-        connectionMsg = "no network connection is active";
+        connectionMsg = "No network connection is active.";
         break;
       case "unknown":
-        connectionMsg = "The netowkr connection state is unknown";
+        connectionMsg = "The network connection state is now unknown.";
         break;
       case "cellular":
-        connectionMsg = "You are now connected to a cellular network";
+        connectionMsg = "You are now connected to a cellular network.";
         break;
       case "wifi":
-        connectionMsg = "You are now connected to a Wifi network";
+        connectionMsg = "You are now connected to a WiFi network.";
         break;
     }
-    Platform.os === "ios"
-      ? Alert.alert("Connection Change: ", connectionMsg)
+    Platform.OS === "ios"
+      ? Alert.alert("Connection change:", connectionMsg)
       : ToastAndroid.show(connectionMsg, ToastAndroid.LONG);
   };
 
